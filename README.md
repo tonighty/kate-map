@@ -1,4 +1,4 @@
-# untitled
+# Kate Map
 
 ## Project setup
 ```
