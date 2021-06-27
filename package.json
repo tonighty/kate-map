@@ -13,6 +13,7 @@
     "dependencies": {
         "core-js": "^3.6.5",
         "leaflet": "^1.7.1",
+        "leaflet.animatedmarker": "^1.0.0",
         "uikit": "^3.6.22",
         "vue": "^2.6.11"
     },

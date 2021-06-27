@@ -2,6 +2,14 @@
     <div id="container">
         <div id="mapContainer"></div>
 
+        <a href="#" class="marker-toggle marker-toggle__agency" :class="agencyEnabled ? '' : 'marker-toggle_disabled'" v-on:click="toggleAgencies">
+            <img src="../assets/tour-marker.png" alt="Вкл/выкл">
+        </a>
+
+        <a href="#" class="marker-toggle marker-toggle__factory" :class="factoryEnabled ? '' : 'marker-toggle_disabled'" v-on:click="toggleFactories">
+            <img src="../assets/factory-marker.png" alt="Вкл/выкл">
+        </a>
+
         <div id="marker-info-modal" uk-modal>
             <div class="uk-modal-dialog uk-border-rounded">
                 <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -51,10 +59,13 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import UIkit from "uikit";
+import "leaflet.animatedmarker/src/AnimatedMarker";
 import mapImage from "../assets/map.png";
 import factoryMarkerImage from "../assets/factory-marker.png";
 import tourMarkerImage from "../assets/tour-marker.png";
 import markerShadowImage from "leaflet/dist/images/marker-shadow.png";
+import planeImage from "../assets/plane.png";
+import bigCloudImage from "../assets/cloud-big.png";
 
 const tourAgencies = [
     {
@@ -122,6 +133,8 @@ export default {
         return {
             center: [37, 7749, -122, 4194],
             currentModalData: tourAgencies[0],
+            agencyEnabled: true,
+            factoryEnabled: true,
         }
     },
     methods: {
@@ -164,21 +177,85 @@ export default {
             })
 
             const modal = UIkit.modal('#marker-info-modal')
+            const agencyLayers = [];
+            const factoryLayers = [];
 
             tourAgencies.forEach((item) => {
-                L.marker([item.lat, item.lon], {icon: tourMarker}).addTo(map).on('click', () => {
+                agencyLayers.push(L.marker([item.lat, item.lon], {icon: tourMarker}).on('click', () => {
                     this.currentModalData = item;
                     modal.show();
-                })
+                }));
             });
 
             factories.forEach((item) => {
-                L.marker([item.lat, item.lon], {icon: factoryMarker}).addTo(map).on('click', () => {
+                factoryLayers.push(L.marker([item.lat, item.lon], {icon: factoryMarker}).on('click', () => {
                     this.currentModalData = item;
                     modal.show();
-                })
+                }));
             });
+
+            this.agencyGroup = L.layerGroup(agencyLayers).addTo(map)
+            this.factoryGroup = L.layerGroup(factoryLayers).addTo(map)
+            this.map = map
+
+            this.addAnimatedMarker(map, {
+                dots: [[2000, -400],[2100, 3000]],
+                iconUrl: planeImage,
+                iconSize: [340 / 2, 268 / 2],
+                interval: 5000,
+            })
+
+            this.addAnimatedMarker(map, {
+                dots: [[500, -300],[700, 3000]],
+                iconUrl: planeImage,
+                iconSize: [340 / 2, 268 / 2],
+                interval: 10000,
+            })
+
+            this.addAnimatedMarker(map, {
+                dots: [[2200, -300],[2200, 3000]],
+                iconUrl: bigCloudImage,
+                iconSize: [567, 276],
+                interval: 20000,
+            })
+            this.addAnimatedMarker(map, {
+                dots: [[1500, -300],[1500, 3000]],
+                iconUrl: bigCloudImage,
+                iconSize: [567 / 2, 276 / 2],
+                interval: 15000,
+            })
         },
+        addAnimatedMarker : function(map, options) {
+            const line = L.polyline(options.dots);
+
+            const icon = L.icon({
+                iconUrl: options.iconUrl,
+                iconSize: options.iconSize,
+            })
+
+            let animatedMarker;
+            const start = () => {
+                animatedMarker = L.animatedMarker(line.getLatLngs(), {
+                    icon: icon,
+                    interval: options.interval,
+                });
+                map.addLayer(animatedMarker);
+            }
+
+            start()
+            setInterval(() => {
+                map.removeLayer(animatedMarker)
+                start()
+            }, options.interval * 2)
+        },
+        toggleAgencies: function() {
+            this.agencyEnabled ? this.agencyGroup.remove() : this.agencyGroup.addTo(this.map);
+            this.agencyEnabled = !this.agencyEnabled;
+        },
+        toggleFactories: function() {
+            this.factoryEnabled ? this.factoryGroup.remove() : this.factoryGroup.addTo(this.map);
+            this.factoryEnabled = !this.factoryEnabled;
+        }
     },
     mounted() {
         this.setupLeafletMap();
@@ -190,5 +267,23 @@ export default {
 #mapContainer {
     width: 100vw;
     height: 100vh;
+}
+.marker-toggle {
+    position: absolute;
+    z-index: 1000;
+    left: 10px;
+    bottom: 50%;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s, filter 0.2s;
+}
+.marker-toggle:hover {
+    transform: scale(1.2);
+}
+.marker-toggle__factory {
+    bottom: calc(50% - 100px);
+}
+.marker-toggle_disabled {
+    filter: grayscale(1);
 }
 </style>

@@ -5142,6 +5142,11 @@ launch-editor@^2.2.1:
     chalk "^2.3.0"
     shell-quote "^1.6.1"
 
+leaflet.animatedmarker@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/leaflet.animatedmarker/-/leaflet.animatedmarker-1.0.0.tgz#af96e2da8f9772aa189456cc4c1b7902b5fdc284"
+  integrity sha1-r5bi2o+XcqoYlFbMTBt5ArX9woQ=
+
 leaflet@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.7.1.tgz#10d684916edfe1bf41d688a3b97127c0322a2a19"
