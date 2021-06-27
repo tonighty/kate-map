@@ -35053,6 +35053,125 @@ var global = arguments[3];
 
 })));
 
+},{}],"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js":[function(require,module,exports) {
+L.AnimatedMarker = L.Marker.extend({
+  options: {
+    // meters
+    distance: 200,
+    // ms
+    interval: 1000,
+    // animate on add?
+    autoStart: true,
+    // callback onend
+    onEnd: function(){},
+    clickable: false
+  },
+
+  initialize: function (latlngs, options) {
+    this.setLine(latlngs);
+    L.Marker.prototype.initialize.call(this, latlngs[0], options);
+  },
+
+  // Breaks the line up into tiny chunks (see options) ONLY if CSS3 animations
+  // are not supported.
+  _chunk: function(latlngs) {
+    var i,
+        len = latlngs.length,
+        chunkedLatLngs = [];
+
+    for (i=1;i<len;i++) {
+      var cur = latlngs[i-1],
+          next = latlngs[i],
+          dist = cur.distanceTo(next),
+          factor = this.options.distance / dist,
+          dLat = factor * (next.lat - cur.lat),
+          dLng = factor * (next.lng - cur.lng);
+
+      if (dist > this.options.distance) {
+        while (dist > this.options.distance) {
+          cur = new L.LatLng(cur.lat + dLat, cur.lng + dLng);
+          dist = cur.distanceTo(next);
+          chunkedLatLngs.push(cur);
+        }
+      } else {
+        chunkedLatLngs.push(cur);
+      }
+    }
+    chunkedLatLngs.push(latlngs[len-1]);
+
+    return chunkedLatLngs;
+  },
+
+  onAdd: function (map) {
+    L.Marker.prototype.onAdd.call(this, map);
+
+    // Start animating when added to the map
+    if (this.options.autoStart) {
+      this.start();
+    }
+  },
+
+  animate: function() {
+    var self = this,
+        len = this._latlngs.length,
+        speed = this.options.interval;
+
+    // Normalize the transition speed from vertex to vertex
+    if (this._i < len && this.i > 0) {
+      speed = this._latlngs[this._i-1].distanceTo(this._latlngs[this._i]) / this.options.distance * this.options.interval;
+    }
+
+    // Only if CSS3 transitions are supported
+    if (L.DomUtil.TRANSITION) {
+      if (this._icon) { this._icon.style[L.DomUtil.TRANSITION] = ('all ' + speed + 'ms linear'); }
+      if (this._shadow) { this._shadow.style[L.DomUtil.TRANSITION] = 'all ' + speed + 'ms linear'; }
+    }
+
+    // Move to the next vertex
+    this.setLatLng(this._latlngs[this._i]);
+    this._i++;
+
+    // Queue up the animation to the next next vertex
+    this._tid = setTimeout(function(){
+      if (self._i === len) {
+        self.options.onEnd.apply(self, Array.prototype.slice.call(arguments));
+      } else {
+        self.animate();
+      }
+    }, speed);
+  },
+
+  // Start the animation
+  start: function() {
+    this.animate();
+  },
+
+  // Stop the animation in place
+  stop: function() {
+    if (this._tid) {
+      clearTimeout(this._tid);
+    }
+  },
+
+  setLine: function(latlngs){
+    if (L.DomUtil.TRANSITION) {
+      // No need to to check up the line if we can animate using CSS3
+      this._latlngs = latlngs;
+    } else {
+      // Chunk up the lines into options.distance bits
+      this._latlngs = this._chunk(latlngs);
+      this.options.distance = 10;
+      this.options.interval = 30;
+    }
+    this._i = 0;
+  }
+
+});
+
+L.animatedMarker = function (latlngs, options) {
+  return new L.AnimatedMarker(latlngs, options);
+};
+
 },{}],"../src/assets/map.png":[function(require,module,exports) {
 module.exports = "/map.69d90127.png";
 },{}],"../src/assets/factory-marker.png":[function(require,module,exports) {
@@ -35061,6 +35180,10 @@ module.exports = "/factory-marker.c8dcc428.png";
 module.exports = "/tour-marker.2d72ad2d.png";
 },{}],"../node_modules/leaflet/dist/images/marker-shadow.png":[function(require,module,exports) {
 module.exports="/marker-shadow.4ea910b7.png";
+},{}],"../src/assets/plane.png":[function(require,module,exports) {
+module.exports = "/plane.8256ab45.png";
+},{}],"../src/assets/cloud-big.png":[function(require,module,exports) {
+module.exports = "/cloud-big.51fd28ae.png";
 },{}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
@@ -35350,6 +35473,8 @@ var _leaflet2 = _interopRequireDefault(require("leaflet"));
 
 var _uikit = _interopRequireDefault(require("uikit"));
 
+require("leaflet.animatedmarker/src/AnimatedMarker");
+
 var _map = _interopRequireDefault(require("../assets/map.png"));
 
 var _factoryMarker = _interopRequireDefault(require("../assets/factory-marker.png"));
@@ -35358,8 +35483,20 @@ var _tourMarker = _interopRequireDefault(require("../assets/tour-marker.png"));
 
 var _markerShadow = _interopRequireDefault(require("leaflet/dist/images/marker-shadow.png"));
 
+var _plane = _interopRequireDefault(require("../assets/plane.png"));
+
+var _cloudBig = _interopRequireDefault(require("../assets/cloud-big.png"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -35449,7 +35586,9 @@ var _default = {
   data: function data() {
     return {
       center: [37, 7749, -122, 4194],
-      currentModalData: tourAgencies[0]
+      currentModalData: tourAgencies[0],
+      agencyEnabled: true,
+      factoryEnabled: true
     };
   },
   methods: {
@@ -35463,12 +35602,11 @@ var _default = {
         zoomDelta: 1,
         dragging: !_leaflet2.default.Browser.mobile,
         tap: !_leaflet2.default.Browser.mobile
-      }); // map.on('click', function(e) {
-      //     alert(`lat: ${Math.round(e.latlng.lat)}, lon: ${Math.round(e.latlng.lng)}`)
-      // });
-      //
+      });
 
-
+      map.on('click', function (e) {
+        alert("lat: ".concat(Math.round(e.latlng.lat), ", lon: ").concat(Math.round(e.latlng.lng)));
+      });
       var bounds = [[0, 0], [2663, 1900]];
 
       _leaflet2.default.imageOverlay(_map.default, bounds).addTo(map);
@@ -35497,22 +35635,83 @@ var _default = {
 
       var modal = _uikit.default.modal('#marker-info-modal');
 
+      var agencyLayers = [];
+      var factoryLayers = [];
       tourAgencies.forEach(function (item) {
-        _leaflet2.default.marker([item.lat, item.lon], {
+        agencyLayers.push(_leaflet2.default.marker([item.lat, item.lon], {
           icon: tourMarker
-        }).addTo(map).on('click', function () {
+        }).on('click', function () {
           _this.currentModalData = item;
           modal.show();
-        });
+        }));
       });
       factories.forEach(function (item) {
-        _leaflet2.default.marker([item.lat, item.lon], {
+        factoryLayers.push(_leaflet2.default.marker([item.lat, item.lon], {
           icon: factoryMarker
-        }).addTo(map).on('click', function () {
+        }).on('click', function () {
           _this.currentModalData = item;
           modal.show();
-        });
+        }));
       });
+      this.agencyGroup = _leaflet2.default.layerGroup(agencyLayers).addTo(map);
+      this.factoryGroup = _leaflet2.default.layerGroup(factoryLayers).addTo(map);
+      this.map = map;
+      this.addAnimatedMarker(map, {
+        dots: [[2000, -400], [2100, 3000]],
+        iconUrl: _plane.default,
+        iconSize: [340 / 2, 268 / 2],
+        interval: 5000
+      });
+      this.addAnimatedMarker(map, {
+        dots: [[500, -300], [700, 3000]],
+        iconUrl: _plane.default,
+        iconSize: [340 / 2, 268 / 2],
+        interval: 10000
+      });
+      this.addAnimatedMarker(map, {
+        dots: [[2200, -300], [2200, 3000]],
+        iconUrl: _cloudBig.default,
+        iconSize: [567, 276],
+        interval: 20000
+      });
+      this.addAnimatedMarker(map, {
+        dots: [[1500, -300], [1500, 3000]],
+        iconUrl: _cloudBig.default,
+        iconSize: [567 / 2, 276 / 2],
+        interval: 15000
+      });
+    },
+    addAnimatedMarker: function addAnimatedMarker(map, options) {
+      var line = _leaflet2.default.polyline(options.dots);
+
+      var icon = _leaflet2.default.icon({
+        iconUrl: options.iconUrl,
+        iconSize: options.iconSize
+      });
+
+      var animatedMarker;
+
+      var start = function start() {
+        animatedMarker = _leaflet2.default.animatedMarker(line.getLatLngs(), {
+          icon: icon,
+          interval: options.interval
+        });
+        map.addLayer(animatedMarker);
+      };
+
+      start();
+      setInterval(function () {
+        map.removeLayer(animatedMarker);
+        start();
+      }, options.interval * 2);
+    },
+    toggleAgencies: function toggleAgencies() {
+      this.agencyEnabled ? this.agencyGroup.remove() : this.agencyGroup.addTo(this.map);
+      this.agencyEnabled = !this.agencyEnabled;
+    },
+    toggleFactories: function toggleFactories() {
+      this.factoryEnabled ? this.factoryGroup.remove() : this.factoryGroup.addTo(this.map);
+      this.factoryEnabled = !this.factoryEnabled;
     }
   },
   mounted: function mounted() {
@@ -35534,6 +35733,42 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "container" } }, [
     _c("div", { attrs: { id: "mapContainer" } }),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass: "marker-toggle marker-toggle__agency",
+        class: _vm.agencyEnabled ? "" : "marker-toggle_disabled",
+        attrs: { href: "#" },
+        on: { click: _vm.toggleAgencies }
+      },
+      [
+        _c("img", {
+          attrs: {
+            src: "/tour-marker.2d72ad2d.png",
+            alt: "Вкл/выкл"
+          }
+        })
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass: "marker-toggle marker-toggle__factory",
+        class: _vm.factoryEnabled ? "" : "marker-toggle_disabled",
+        attrs: { href: "#" },
+        on: { click: _vm.toggleFactories }
+      },
+      [
+        _c("img", {
+          attrs: {
+            src: "/factory-marker.c8dcc428.png",
+            alt: "Вкл/выкл"
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
     _c("div", { attrs: { id: "marker-info-modal", "uk-modal": "" } }, [
       _c("div", { staticClass: "uk-modal-dialog uk-border-rounded" }, [
@@ -35679,7 +35914,7 @@ render._withStripped = true
       
       }
     })();
-},{"leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
+},{"leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35794,7 +36029,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64741" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58377" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
