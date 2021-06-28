@@ -35184,6 +35184,62 @@ module.exports="/marker-shadow.4ea910b7.png";
 module.exports = "/plane.8256ab45.png";
 },{}],"../src/assets/cloud-big.png":[function(require,module,exports) {
 module.exports = "/cloud-big.51fd28ae.png";
+},{}],"../src/assets/tour-firms.json":[function(require,module,exports) {
+module.exports = [{
+  "name": "Афина Паллада",
+  "address": "ул. Коммунаров, 21, Владивосток (этаж 3, комната 310).",
+  "site": "afina-pallada.org",
+  "workTime": "пн-пт 09:00–18:00",
+  "phones": ["+7 (423) 257-55-63", "+7 (423) 225-24-76"],
+  "availableTours": ["ООО «Фабрика мороженного»", "Завод «Соллерс Мазда»."],
+  "lat": 678,
+  "lon": 969
+}, {
+  "name": "Фрегат Аэро",
+  "address": "Океанский просп., 69, Владивосток (оф. 21).",
+  "site": "fregataero.ru",
+  "workTime": "пн-пт 10:00–18:00",
+  "phones": ["+7 (423) 245-96-96", "+7 (423) 230-03-45"],
+  "availableTours": ["Завод «Coca-Cola»"],
+  "lat": 1062,
+  "lon": 624
+}, {
+  "name": "Фори Тур Приморье",
+  "address": "Океанский просп., 123Б, Владивосток.",
+  "site": "foritour.ru",
+  "workTime": "пн-пт 09:00–18:00; сб 10:00–15:00.",
+  "phones": ["+7 (423) 242-20-17", "+7 (423) 257-68-63", "+7 (908) 448-86-81", "+7 (423) 242-14-39"],
+  "availableTours": ["Завод «Coca-Cola»", "ООО «Фабрика мороженного»", "Торгово-производственная компания «Владхлеб»", "Торгово-производственная компания «Эвернит»", "Биотик-Люкс"],
+  "lat": 1122,
+  "lon": 705
+}, {
+  "name": "Оникс Тур",
+  "address": "Алеутская ул., 51, Владивосток (офис 12).",
+  "site": "onix-tur.ru",
+  "workTime": "пн-пт 09:00–18:00; сб 11:00–16:00.",
+  "phones": ["+7 (908) 440-00-01", "+7 (914) 963-46-75", "+7 (423) 250-00-01", "+7 (423) 274-54-44", "+7 (423) 255-90-40", "+7 (432) 250-00-01"],
+  "availableTours": ["ООО «Фабрика мороженного»", "Биотик-Люкс"],
+  "lat": 986,
+  "lon": 548
+}, {
+  "name": "«Приморавтотранс»",
+  "address": "Комсомольская ул., 7А, Владивосток (офис 4).",
+  "site": "primoravtotour.ru",
+  "workTime": "пн-пт 09:00–19:00; сб 10:00–15:00.",
+  "phones": ["+7 (423) 245-03-45"],
+  "availableTours": ["Завод «Coca-Cola»"],
+  "lat": 1089,
+  "lon": 599
+}, {
+  "name": "«Спутник»",
+  "address": "Партизанский просп., 2А, Владивосток (офис 101, этаж 1)",
+  "site": "sputnik.travel",
+  "workTime": "пн-пт 09:00–17:30; сб 10:00–15:00",
+  "phones": ["+7 (423) 245-03-45."],
+  "availableTours": ["ООО «Фабрика мороженного»", "Торгово-производственная компания «Эвернит»", "Завод «Соллерс Мазда»"],
+  "lat": 993,
+  "lon": 616
+}];
 },{}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
@@ -35487,6 +35543,8 @@ var _plane = _interopRequireDefault(require("../assets/plane.png"));
 
 var _cloudBig = _interopRequireDefault(require("../assets/cloud-big.png"));
 
+var _tourFirms = _interopRequireDefault(require("../assets/tour-firms.json"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //
@@ -35546,28 +35604,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-var tourAgencies = [{
-  name: 'Афина Паллада',
-  address: 'ул. Коммунаров, 21, Владивосток (этаж 3, комната 310).',
-  site: 'afina-pallada.org',
-  workTime: 'пн-пт 09:00–18:00',
-  phones: ['+7 (423) 257-55-63', '+7 (423) 225-24-76'],
-  availableTours: ['ООО «Фабрика мороженного»', 'Завод «Соллерс Мазда».'],
-  lat: 700,
-  lon: 969
-}, {
-  name: 'другое агентство',
-  address: 'ул. Коммунаров, 21, Владивосток (этаж 3, комната 310).',
-  description: 'описание',
-  email: 'mjr@feip.co',
-  instagram: 'someinsta',
-  site: 'afina-pallada.org',
-  workTime: 'пн-пт 09:00–18:00',
-  phones: ['+7 (423) 257-55-63', '+7 (423) 225-24-76'],
-  availableTours: ['ООО «Фабрика мороженного»', 'Завод «Соллерс Мазда».'],
-  lat: 400,
-  lon: 769
-}];
+
+/** @type {Array} */
+var tourAgencies = _tourFirms.default;
 var factories = [{
   name: 'Эвернит',
   address: 'ул. Русская, д. 94А, пом. здание Завода «Варяг», г. Владивосток',
@@ -35579,7 +35618,7 @@ var factories = [{
   phones: ['+7 (423) 202-52-53', 'WA +7 (902)-488-80-70'],
   availableTours: ['ООО «Фабрика мороженного»', 'Завод «Соллерс Мазда».'],
   lat: 1159.5733503104373,
-  lon: 845.3045969605365
+  lon: 845
 }];
 var _default = {
   name: "Map",
@@ -35620,8 +35659,9 @@ var _default = {
         shadowUrl: _markerShadow.default,
         iconSize: [138 / 2, 176 / 2],
         // size of the icon
+        iconAnchor: [138 / 4, 176 / 2],
         shadowSize: [138, 176],
-        shadowAnchor: [45, 132]
+        shadowAnchor: [138 / 4 + 10, 176]
       });
 
       var tourMarker = _leaflet2.default.icon({
@@ -35629,8 +35669,9 @@ var _default = {
         shadowUrl: _markerShadow.default,
         iconSize: [138 / 2, 176 / 2],
         // size of the icon
+        iconAnchor: [138 / 4, 176 / 2],
         shadowSize: [138, 176],
-        shadowAnchor: [45, 132]
+        shadowAnchor: [138 / 4 + 10, 176]
       });
 
       var modal = _uikit.default.modal('#marker-info-modal');
@@ -35856,7 +35897,9 @@ exports.default = _default;
             2
           ),
           _vm._v(" "),
-          _vm._m(0)
+          _vm.currentModalData.images
+            ? _c("div", { attrs: { "uk-slideshow": "" } }, [_vm._m(0)])
+            : _vm._e()
         ])
       ])
     ])
@@ -35867,17 +35910,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { "uk-slideshow": "" } }, [
-      _c("ul", { staticClass: "uk-slideshow-items" }, [
-        _c("li", [
-          _c("img", {
-            attrs: {
-              src: "/factory-marker.c8dcc428.png",
-              alt: "",
-              "uk-cover": ""
-            }
-          })
-        ])
+    return _c("ul", { staticClass: "uk-slideshow-items" }, [
+      _c("li", [
+        _c("img", {
+          attrs: {
+            src: "/factory-marker.c8dcc428.png",
+            alt: "",
+            "uk-cover": ""
+          }
+        })
       ])
     ])
   }
@@ -35914,7 +35955,7 @@ render._withStripped = true
       
       }
     })();
-},{"leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
+},{"leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","../assets/tour-firms.json":"../src/assets/tour-firms.json","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36029,7 +36070,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58377" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53912" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
