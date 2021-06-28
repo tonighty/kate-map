@@ -42,7 +42,7 @@
                         <span class="uk-text-bold uk-text-emphasis" v-for="tour in currentModalData.availableTours">— {{ tour }} <br></span>
                     </p>
 
-                    <div uk-slideshow>
+                    <div uk-slideshow v-if="currentModalData.images">
                         <ul class="uk-slideshow-items">
                             <li>
                                 <img src="../assets/factory-marker.png" alt="" uk-cover>
@@ -66,44 +66,10 @@ import tourMarkerImage from "../assets/tour-marker.png";
 import markerShadowImage from "leaflet/dist/images/marker-shadow.png";
 import planeImage from "../assets/plane.png";
 import bigCloudImage from "../assets/cloud-big.png";
+import tourFirms from "../assets/tour-firms.json";
 
-const tourAgencies = [
-    {
-        name: 'Афина Паллада',
-        address: 'ул. Коммунаров, 21, Владивосток (этаж 3, комната 310).',
-        site: 'afina-pallada.org',
-        workTime: 'пн-пт 09:00–18:00',
-        phones: [
-            '+7 (423) 257-55-63',
-            '+7 (423) 225-24-76',
-        ],
-        availableTours: [
-            'ООО «Фабрика мороженного»',
-            'Завод «Соллерс Мазда».',
-        ],
-        lat: 700,
-        lon: 969,
-    },
-    {
-        name: 'другое агентство',
-        address: 'ул. Коммунаров, 21, Владивосток (этаж 3, комната 310).',
-        description: 'описание',
-        email: 'mjr@feip.co',
-        instagram: 'someinsta',
-        site: 'afina-pallada.org',
-        workTime: 'пн-пт 09:00–18:00',
-        phones: [
-            '+7 (423) 257-55-63',
-            '+7 (423) 225-24-76',
-        ],
-        availableTours: [
-            'ООО «Фабрика мороженного»',
-            'Завод «Соллерс Мазда».',
-        ],
-        lat: 400,
-        lon: 769,
-    },
-];
+/** @type {Array} */
+const tourAgencies = tourFirms;
 
 const factories = [
     {
@@ -123,7 +89,7 @@ const factories = [
             'Завод «Соллерс Мазда».',
         ],
         lat: 1159.5733503104373,
-        lon: 845.3045969605365,
+        lon: 845,
     },
 ];
 
@@ -164,16 +130,18 @@ export default {
                 iconUrl: factoryMarkerImage,
                 shadowUrl: markerShadowImage,
                 iconSize: [138 / 2, 176 / 2], // size of the icon
+                iconAnchor: [138 / 4, 176 / 2],
                 shadowSize: [138, 176],
-                shadowAnchor: [45, 132],
+                shadowAnchor: [138 / 4 + 10, 176],
             })
 
             const tourMarker = L.icon({
                 iconUrl: tourMarkerImage,
                 shadowUrl: markerShadowImage,
                 iconSize: [138 / 2, 176 / 2], // size of the icon
+                iconAnchor: [138 / 4, 176 / 2],
                 shadowSize: [138, 176],
-                shadowAnchor: [45, 132],
+                shadowAnchor: [138 / 4 + 10, 176],
             })
 
             const modal = UIkit.modal('#marker-info-modal')
