@@ -8542,6 +8542,9 @@ if (inBrowser) {
 
 var _default = Vue;
 exports.default = _default;
+},{}],"../node_modules/vue-nl2br/dist/vue-nl2br.js":[function(require,module,exports) {
+var define;
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.vueNl2br=t():e.vueNl2br=t()}(window,function(){return function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=0)}([function(e,t,r){"use strict";r.r(t);var n={functional:!0,props:{tag:{type:String,required:!0},text:{type:String,required:!0},className:{type:String,required:!1}},render:function(e,t){return e(t.props.tag,{class:t.props.className},t.props.text.split("\n").reduce(function(t,r){return Array.isArray(t)?t.concat([e("br"),r]):[t,e("br"),r]}))}};t.default=n}])});
 },{}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -35240,6 +35243,140 @@ module.exports = [{
   "lat": 993,
   "lon": 616
 }];
+},{}],"../src/assets/fabrics.json":[function(require,module,exports) {
+module.exports = [{
+  "name": "Завод «Coca-Cola»",
+  "address": "2-ая Шоссейная, 1а, г. Артем.",
+  "phones": ["+7 (423) 257-55-63", "+7 (423) 225-24-76"],
+  "email": null,
+  "instagram": null,
+  "site": "https://ru.coca-colahellenic.com/ru/О%20нас",
+  "description": "Coca-Cola HBC Россия в период сложной эпидемиологической обстановки предлагает новый формат знакомства с производственными процессами и работой компании – онлайн-вебинар.\nОпытные экскурсоводы в прямом эфире рассказывают о всех этапах производства: как происходит изготовление бутылок на выдувной машине, какой главный ингредиент скрывает в себе знаменитый вкус напитка Coca-Cola, что такое филлер и как компании удается следовать единым стандартам качества на протяжении всего процесса изготовления напитков. Помимо этого, экскурсоводы дают общую информацию о деятельности Coca‑Cola в России, спортивных и социальных инициативах, которые поддерживает или организует компания. Информация подается в легкой форме с большим количеством видеоматериалов.\nОчные экскурсии на заводы Coca-Cola HBС Россия будут возобновлены в полном объеме, как только ситуация с заболеваемостью COVID - 19 в стране полностью стабилизируется.",
+  "price": "бесплатно по заявке (трансфер не предоставлется).\nЗаявка оформляется на сайте в разделе «Деятельность в России» – «Экскурсии».",
+  "lat": 2544,
+  "lon": 1789,
+  "pic": ["photo_2021-06-28_20-54-02.jpg", "photo_2021-06-28_20-54-53.jpg"]
+}, {
+  "name": "ООО «Фабрика мороженого»",
+  "address": "ул. Успенского, 58, г. Владивосток.",
+  "phones": ["+7 (423) 2388-695"],
+  "email": "fabrika@vladice.ru",
+  "instagram": "https://www.instagram.com/vlad_icecream/",
+  "site": "https://www.vlad-icecream.com",
+  "description": "В связи с эпидемиологической ситуацией в Приморском крае, экскурсии на производство пока не проводятся. Однако, как только пандемия COVID-19 завершится, «Фабрика мороженого» будет рада видеть новых гостей.",
+  "price": "рассчитывается индивидуально в зависимости от количества человек в группе. По вопросам приобретения экскурсий необходимо обратиться по телефону, электронной почте или в директ в социальной сети «Instagram».\nВо время экскурсии вы пройдёте по основным цехам фабрики и увидите весь процесс производства мороженого: склад, где хранятся все ингредиенты для мороженого, вафельный цех – где пекутся ароматные вафельные стаканчики, варочный цех, в котором вы узнаете, что мороженое бывает тёплым и умеет передвигаться по трубам.\nЭкскурсия проводится только для школьников с 7-15 лет. Экскурсия производственная, проводится только в дни и часы, установленные руководством фабрики, (объявляются за несколько дней до проведения на протяжении всего года).",
+  "lat": 2333,
+  "lon": 1657,
+  "pic": ["photo_2021-06-28_21-40-30.jpg", "photo_2021-06-28_21-40-45.jpg"]
+}, {
+  "name": "Славда",
+  "address": "ул. Днепровская, 100, г. Владивосток.",
+  "phones": ["+7 (423) 234-34-16"],
+  "email": "secretar@slavda.ru",
+  "instagram": null,
+  "site": "https://www.slavda.ru",
+  "description": "Группа компаний «Славда» – лидер на рынке минеральной воды на Дальнем Востоке России. Уже 20 лет ГК «Славда» разрабатывает в Приморском крае источники уникальной минеральной воды и снабжает ей жителей края и города, сохраняя ее природную чистоту и полезные свойства. ГК «Славда» предлагает потребителям весь возможный спектр минеральной воды и напитков на ее основе: газированная, негазированная, питьевая, столовая, лечебно-столовая, безалкогольные напитки. Во Владивостоке работает завод «Славда», который разливает воду «Славда». В районе Шмаковских курортов располагается завод «Скит», который производит воды «Монастырскую», «Шмаковка №1», а также «Медвежку» и напитки «Монастырские».",
+  "price": "По вопросам приобретения экскурсий обращаться по номеру телефону или на электронную почту. Стоимость экскурсии рассчитывается индивидуально в зависимости от количества человек в группе.",
+  "lat": 1405,
+  "lon": 974,
+  "pic": ["photo_2021-06-28_21-47-32.jpg", "photo_2021-06-28_21-47-54.jpg"]
+}, {
+  "name": "Фабрика шоколада «Гудвин» («Tasty Kingdom»)",
+  "address": "ул. Днепровская, 103в, г. Владивосток.",
+  "phones": ["+7 (423) 279-56-80"],
+  "email": "office@tasty-kingdom.ru",
+  "instagram": null,
+  "site": "https://tasty-kingdom.ru",
+  "description": "Фабрика полного цикла «Tasty Kingdom» возведена в 2018 году и оснащена новейшим оборудованием, что позволяет делать различные кондитерские изделия на основе шоколада. Запуск производственных линий состоялся в январе 2019 года. Для разработки новых продуктов и вкусов компания привлекает профессиональных шоколатье и технологов, работающих с крупнейшими кондитерскими производствами РФ и других стран.\nХочешь узнать, как делаются те самые шоколадные яйца?) Скорее звони и пиши, чтобы записаться к нам на экскурсию!",
+  "price": null,
+  "lat": 1321,
+  "lon": 882,
+  "pic": ["photo_2021-06-28_21-49-44.jpg", "photo_2021-06-28_21-49-58.jpg"]
+}, {
+  "name": "Торгово-производственная компания «Владхлеб»",
+  "address": "ул. Народный проспект, 29 к4, г. Владивосток.",
+  "phones": ["8 (423) 220-68-19"],
+  "email": "museum@vladhleb.ru",
+  "instagram": null,
+  "site": "https://vladhleb.ru",
+  "description": "Традиции хлебопечения компания «Владхлеб» хранит с 1903 года. Уже более ста лет продукция «Владхлеба» является неизменным спутником будней и праздников жителей Владивостока. Музей «Владхлеб» бережно хранит историю предприятия в архивных записях и старых фотографиях. Здесь можно узнать, и как готовили хлеб в тяжелое военное время, и когда во Владивостоке появился первый настоящий круассан, как родился «Подольский» и какие очереди выстраивались в первые городские кондитерские. 15 457 человек посетили музей за 12 лет!\nВ 2017 году в музее была проведена масштабная реконструкция. Сегодня эта интерактивная площадка, показывающая связь хлебопекарного предприятия и Владивостока, работает не только для сотрудников предприятия, но и для горожан. Музей «Владхлеб» обязательно принимает иностранные и другие делегации, посещающие предприятие. Здесь проводят экскурсии и мастер-классы для детей и взрослых.\nДля регистрации на экскурсию достаточно:\n1 Минимум за 1 день до планируемой даты посещения выставки отправить на museum@vladhleb.ru заявку, указав в теме письма дату и время планируемой экскурсии, а также номер телефона для подтверждения заявки, или позвонить по телефону: 220-68-23.\n2 В теме письма обязательна пометка «ЭКСКУРСИЯ».\n3 Дождаться телефонного подтверждения вашей заявки от сотрудника музея.\n4 Для регистрации на мастер-класс необходимо подать заявку за 3 дня.\nПравила посещения:\n1 Оптимальное количество человек в группе для экскурсии: от 3 и более посетителей.\n2 Экскурсии с дегустацией-чаепитием 10-30 посетителей с сопровождающим для школьников.\n3 Примерная продолжительность экскурсии: 40-50 минут, мастер-класса: 30 минут.\n4 Дни и время работы музея: с понедельника по пятницу с 10:00-17:00 , суббота и воскресенье – выходной.\n5 Проведение экскурсии с чаепитием-дегустацией, мастер-классом возможно только по предварительной заявке.",
+  "price": "1 Экскурсия + дегустация + мастер-класс по росписи пряников – 400 руб/чел.\n2 Экскурсия + дегустация-чаепитие – 300 руб/чел.\n3 Экскурсия – 150 руб/чел.\n4 Экскурсия для организованных экскурсионных групп иностранных туристов – 200 руб/чел.",
+  "lat": 1042,
+  "lon": 836,
+  "pic": ["photo_2021-06-28_21-55-11.jpg", "photo_2021-06-28_21-55-21.jpg"]
+}, {
+  "name": "Приморский кондитер",
+  "address": "г. Владивосток, ул. Алеутская, 52.",
+  "phones": ["+7 (423) 240-67-40"],
+  "email": "konditer@primkon.ru",
+  "instagram": null,
+  "site": null,
+  "description": "«Приморский кондитер» – первая на Дальнем Востоке кондитерская фабрика, традиции которой уже более 109 лет непрерывно и тщательно поддерживаются. На фабрике производится более 300 наименований кондитерских изделий: ирис, драже, пастила, печенье, торты, вафли, натуральный шоколад, шоколадные конфеты с разными начинками и вкуснейшие конфеты «Птичье молоко».\nЭкскурсия «Приморские лакомства». \nУвлекательная экскурсия, на которой вы узнаете все о сладостях мира, историю фабрик Владивостока, выпускающих кондитерские изделия, в том числе о фабрике «Приморский кондитер», где Вы посетите выставочный зал, посмотрите познавательный фильм о технологии изготовления печенья и шоколадной продукции, а также сможете попробовать сладости лично, и задать интересующие Вас вопросы консультантам!",
+  "price": "группа 25-35 детей – 600 руб./ч, группа 36-48 детей – 500 руб./ч.\nВ стоимость входит: автобус, экскурсовод, дегустация.\nКлассы (возраст) – младшие классы.\nНаправление – Владивосток.\nПродолжительность – 3-4 часа.\nСезон – осень/ весна/лето/зима.\nТип тура: автобусный/ городской/ познавательный.",
+  "lat": 1014,
+  "lon": 632,
+  "pic": ["photo_2021-06-28_21-57-48.jpg", "photo_2021-06-28_21-57-59.jpg"]
+}, {
+  "name": "Биотик-Люкс",
+  "address": "ул. Верхнепортовая, 66а, г. Владивосток.",
+  "phones": ["+7 914 792-57-35."],
+  "email": "bioticluxe@mail.ru",
+  "instagram": null,
+  "site": "https://seacucumber-museum.com",
+  "description": "«Владивосток – родина этого морского «зверя». Трепанг существо интересное и уникальное. И где же, если не во Владивостоке, создать такой музей». Дмитрий Павлов – основатель Музея Трепанга.\nМузей «Биотик Люкс» – это нечто необычное и в то же время особенно характерное для Владивостока. Парковка с разрисованными стенами в стиле морской тематики. Подводный мир, маяк, ставшие знаменитыми лисы Русского острова, тигр как символ Дальнего Востока и медведь как символ России – поместилось всё. В Музее используют всё, что может рассказать о море – картины местных художников, штурвал, корабельную мачту, старую географическую карту.\nЭкспонатов: 788. Экскурсоводов: 8+. Площадь музея: 1050 м^2. Музей посетили: 550 000 чел.\nСоциальное направление.\nМы проводим мероприятия и познавательные квесты для детей. В ходе увлекательного квеста участники узнают много удивительного про иглокожее существо, обитающее в нашем море уже более 500 миллионов лет, о его способности регенерации и многое другое. ⠀ ⠀\nПо подсказкам древних свитков, шаг за шагом участникам предстоит двигаться к заветной цели, преодолевая трудности. В пути юные герои смогут совершить «привал» в кинозале , просмотрев сюжет о морских обитателях.",
+  "price": null,
+  "lat": 713,
+  "lon": 369,
+  "pic": ["photo_2021-06-28_21-59-36.jpg", "photo_2021-06-28_22-00-08.jpg"]
+}, {
+  "name": "Дальзавод",
+  "address": "ул. Дальзаводская, 2, г. Владивосток.",
+  "phones": ["8 (423) 2-224-010", "+7 423 229-99-80"],
+  "email": "dalzavod@dcss.ru",
+  "instagram": "@cs.dalzavod",
+  "site": "https://csdalzavod.ru",
+  "description": "Центр судоремонта «Дальзавод» является главной судоремонтной базой надводного и дизель-электрического подводного флота России на Тихом океане. АО «ЦСД» — хорошо оснащенный комплекс, обладающий высокими техническим и производственным потенциалами, который качественно и своевременно выполняет широкий спектр работ судостроительного и судоремонтного профиля. Сегодня это динамично развивающееся предприятие, входящее в группу компаний «ДЦСС», собственником которой является группа ПАО «НК «Роснефть». \nНа территории предприятия есть музей трудовой славы Дальзавода. Музей – часть истории завода, первого и долгие годы единственного крупнейшего предприятия судоремонтного производства Дальнего Востока. С первых дней завод стал кузницей пролетарских кадров и центром революционного движения в крае. Дальзаводцы создавали Тихоокеанский флот, героически трудились в годы войны и самоотверженно в послевоенные десятилетия. Одна из наиболее примечательных страниц - рождение промышленного применения электросварки в СССР, ее энтузиаст - талантливый инженер и ученый В. П. Вологдин. Посетители с интересом узнают о делегатах съездов, Героях Советского Союза и труда, тружениках, отдавших заводу более полувека жизни. По материалам фондов написаны статьи, книги, сборники, летопись завода. Студенты вузов и техникумов используют материалы музея при подготовке к лекциям, для курсовых и дипломных проектов. Обращаются и аспиранты ДВО РАН.\nОсновные экскурсии:\n•  Рождение и развитие Дальзавода;\n•  Завод – пионер сварки в судостроении;\n•  Научно-технический прогресс в судоремонте.",
+  "price": "Внимание: экскурсии проводятся только по предварительной договоренности, экскурсии для школьников и студентов бесплатные, для иных лиц по договоренности в зависимости от численности группы!",
+  "lat": 847,
+  "lon": 855,
+  "pic": ["photo_2021-06-28_22-04-20.jpg", "photo_2021-06-28_22-04-29.jpg"]
+}, {
+  "name": "Завод «Соллерс Мазда»",
+  "address": "Дальзаводская ул., 2/14, г. Владивосток.",
+  "phones": ["+7 (423) 251-37-11"],
+  "email": null,
+  "instagram": null,
+  "site": "http://sollers-auto.com/ru/",
+  "description": "ООО «МАЗДА СОЛЛЕРС Мануфэкчуринг Рус» – совместное предприятие компаний Mazda Motor Corporation (Япония) и ПАО «СОЛЛЕРС» (Россия), созданное на принципах партнерства 50/50. «МАЗДА СОЛЛЕРС» входит в состав предприятий глобальной сети Mazda, расположенных по всему миру, и является единственным производителем Mazda в России.\nНа сегодняшний день предприятие выпускает три модели автомобилей: кроссоверы Mazda CX-9 и Mazda CX-5, седаны Mazda6, а также двигатели Mazda семейства SkyActiv-G. Выпускаемые автомобили реализуют около 70-ти дилерских центров, расположенных на территории Российской Федерации и стран ЕАЭС.",
+  "price": "По вопросам экскурсий обращаться по телефону, стоимость зависит от количества человек в группе! Внимание: на экскурсию принимаются дети не младше 11 лет!",
+  "lat": 796,
+  "lon": 977,
+  "pic": ["photo_2021-06-28_22-06-15.jpg", "photo_2021-06-28_22-06-27.jpg"]
+}, {
+  "name": "Владивостокская ТЭЦ-2",
+  "address": "ул. Фадеева, 47, г. Владивосток.",
+  "phones": ["+7(4232) 212334", "+7(4232) 231161"],
+  "email": null,
+  "instagram": null,
+  "site": "https://dvgk.ru/page/2746",
+  "description": "Владивостокская ТЭЦ-2 представляет собой тепловую паротурбинную электростанцию с комбинированной выработкой электроэнергии и тепла. Установленная мощность электростанции – 497 МВт, тепловая мощность – 1051 Гкал/час. Тепловая схема станции выполнена с поперечными связями по основным потокам пара и воды. В качестве топлива на 10 котлоагрегатах используется природный газ сахалинских месторождений, на 4 котлоагрегатах - бурый уголь Павловского разреза. \nСегодня Владивостокская ТЭЦ-2 является основным источником по обеспечению производственным паром, тепловой и электрической энергией промышленности и населения г. Владивостока. Это самая мощная станция в системе филиала «Приморская генерация». На станции эксплуатируются 14 котлоагрегатов и 6 турбогенераторов. ВТЭЦ-2 обеспечивает Владивосток теплом и светом. Она является крупнейшим энергообъектом юга Приморского края, обеспечивая 60 % потребностей города Владивостока электрической энергией и 63% – тепловой.\nНа каждой из экскурсий вы пройдете по территории электростанции, посетите производственные цеха – главный щит управления, турбинный цех, тепловой щит котельного цеха. Специалисты-энергетики высшей квалификации расскажут об электричестве и электрических машинах, о видах и способах передачи электроэнергии на большие расстояния, о тепле о принципе работы турбин. ",
+  "price": "Экскурсии проводятся по предварительному заказу и записи.",
+  "lat": 778,
+  "lon": 1358,
+  "pic": ["photo_2021-06-28_22-08-07.jpg", "photo_2021-06-28_22-08-13.jpg"]
+}, {
+  "name": "Торгово-производственная компания «Эвернит»",
+  "address": "ул. Русская, д. 94А, пом. здание Завода «Варяг», г. Владивосток.",
+  "phones": ["+7 (423) 202-52-53", "+7 (902)-488-80-70"],
+  "email": "everneat@everneat.ru",
+  "instagram": "www.instagram.com/ever_neat/",
+  "site": "https://everneat.ru",
+  "description": "Компания «Эвернит» – производитель чулочно-носочных изделий во Владивостоке.  Фабрика создана в 2007 году, оснащена самым современным и высокотехнологичным корейским и итальянским оборудованием, что позволяет создавать носки практически любого дизайна.\nВысокое качество носков обусловлено использованием пряжи индийского и итальянского производства, и современных видов полиамида и эластана от лучших производителей, что гарантирует эстетичный вид, хорошую эластичность и комфорт.\nКомпания «Эвернит» предоставляет экскурсии по предприятию. Сотрудники цеха показывают, и рассказывают этапы создания продукта, от выбора пряжи до упаковки готовой продукции. Важно, вырастить грамотную смену технологов в области товароведения, чтобы качество изделия, только радовало наших дорогих покупателей. На фабрике экскурсии проводятся опытными технологами в области производственных процессов. Во время нашей экскурсии ребята могут сами применить знания теории на практике в цехе: выбрать материал, настроить оборудование, подобрать рисунок к макету, попробовать выявить брак и упаковать продукцию. Каждая экскурсия вызывает только положительные эмоции у выпускников, многие впервые видят, как организовать полный цикл производства. Особый интерес вызывает процесс создания носочков с принтами.",
+  "price": "Экскурсии на предприятие доступны для оптовых компаний, студенческих и школьных групп, заранее запланируйте дату и запишитесь по телефону 202-52-53. Фабрика «Эвернит» рада и открыта для сотрудничества",
+  "lat": 1619,
+  "lon": 1036,
+  "pic": ["photo_2021-06-28_22-10-14.jpg", "photo_2021-06-28_22-10-24.jpg"]
+}];
 },{}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
@@ -35523,6 +35660,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _vueNl2br = _interopRequireDefault(require("vue-nl2br"));
+
 require("leaflet/dist/leaflet.css");
 
 var _leaflet2 = _interopRequireDefault(require("leaflet"));
@@ -35544,6 +35683,8 @@ var _plane = _interopRequireDefault(require("../assets/plane.png"));
 var _cloudBig = _interopRequireDefault(require("../assets/cloud-big.png"));
 
 var _tourFirms = _interopRequireDefault(require("../assets/tour-firms.json"));
+
+var _fabrics = _interopRequireDefault(require("../assets/fabrics.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35604,28 +35745,38 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /** @type {Array} */
-var tourAgencies = _tourFirms.default;
-var factories = [{
-  name: 'Эвернит',
-  address: 'ул. Русская, д. 94А, пом. здание Завода «Варяг», г. Владивосток',
-  description: 'описание',
-  email: 'everneat@everneat.ru',
-  instagram: 'www.instagram.com/ever_neat/',
-  site: 'https://everneat.ru',
-  workTime: 'пн-пт 09:00–18:00',
-  phones: ['+7 (423) 202-52-53', 'WA +7 (902)-488-80-70'],
-  availableTours: ['ООО «Фабрика мороженного»', 'Завод «Соллерс Мазда».'],
-  lat: 1159.5733503104373,
-  lon: 845
-}];
+
+/** @type {Array} */
 var _default = {
   name: "Map",
+  components: {
+    Nl2br: _vueNl2br.default
+  },
   data: function data() {
     return {
       center: [37, 7749, -122, 4194],
-      currentModalData: tourAgencies[0],
+      currentModalData: _tourFirms.default[0],
       agencyEnabled: true,
       factoryEnabled: true
     };
@@ -35643,9 +35794,6 @@ var _default = {
         tap: !_leaflet2.default.Browser.mobile
       });
 
-      map.on('click', function (e) {
-        alert("lat: ".concat(Math.round(e.latlng.lat), ", lon: ").concat(Math.round(e.latlng.lng)));
-      });
       var bounds = [[0, 0], [2663, 1900]];
 
       _leaflet2.default.imageOverlay(_map.default, bounds).addTo(map);
@@ -35678,7 +35826,8 @@ var _default = {
 
       var agencyLayers = [];
       var factoryLayers = [];
-      tourAgencies.forEach(function (item) {
+
+      _tourFirms.default.forEach(function (item) {
         agencyLayers.push(_leaflet2.default.marker([item.lat, item.lon], {
           icon: tourMarker
         }).on('click', function () {
@@ -35686,7 +35835,8 @@ var _default = {
           modal.show();
         }));
       });
-      factories.forEach(function (item) {
+
+      _fabrics.default.forEach(function (item) {
         factoryLayers.push(_leaflet2.default.marker([item.lat, item.lon], {
           icon: factoryMarker
         }).on('click', function () {
@@ -35694,6 +35844,7 @@ var _default = {
           modal.show();
         }));
       });
+
       this.agencyGroup = _leaflet2.default.layerGroup(agencyLayers).addTo(map);
       this.factoryGroup = _leaflet2.default.layerGroup(factoryLayers).addTo(map);
       this.map = map;
@@ -35818,111 +35969,205 @@ exports.default = _default;
           attrs: { type: "button", "uk-close": "" }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "uk-modal-body" }, [
-          _c(
-            "h2",
-            { staticClass: "uk-modal-title uk-text-bold uk-text-center" },
-            [_vm._v(_vm._s(_vm.currentModalData.name))]
-          ),
-          _vm._v(" "),
-          _c("p", [
-            _c("span", { staticClass: "uk-text-muted" }, [_vm._v("Адрес:")]),
+        _c(
+          "div",
+          { staticClass: "uk-modal-body" },
+          [
+            _c(
+              "h2",
+              { staticClass: "uk-modal-title uk-text-bold uk-text-center" },
+              [_vm._v(_vm._s(_vm.currentModalData.name))]
+            ),
             _vm._v(" "),
-            _c("br"),
+            _vm.currentModalData.description
+              ? _c(
+                  "nl2br",
+                  {
+                    attrs: { tag: "p", text: _vm.currentModalData.description }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.currentModalData.description) +
+                        "\n                "
+                    )
+                  ]
+                )
+              : _vm._e(),
             _vm._v(" "),
-            _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
-              _vm._v(_vm._s(_vm.currentModalData.address))
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("span", { staticClass: "uk-text-muted" }, [_vm._v("Сайт:")]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
-              _vm._v(_vm._s(_vm.currentModalData.site))
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("span", { staticClass: "uk-text-muted" }, [
-              _vm._v("Время работы:")
+            _c("p", [
+              _c("span", { staticClass: "uk-text-muted" }, [_vm._v("Адрес:")]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
+                _vm._v(_vm._s(_vm.currentModalData.address))
+              ])
             ]),
             _vm._v(" "),
-            _c("br"),
+            _vm.currentModalData.site
+              ? _c("p", [
+                  _c("span", { staticClass: "uk-text-muted" }, [
+                    _vm._v("Сайт:")
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
+                    _vm._v(_vm._s(_vm.currentModalData.site))
+                  ])
+                ])
+              : _vm._e(),
             _vm._v(" "),
-            _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
-              _vm._v(_vm._s(_vm.currentModalData.workTime))
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "p",
-            [
-              _c("span", { staticClass: "uk-text-muted" }, [
-                _vm._v("Телефоны:")
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _vm._l(_vm.currentModalData.phones, function(phone) {
-                return _c(
-                  "span",
-                  { staticClass: "uk-text-bold uk-text-emphasis" },
-                  [_vm._v(_vm._s(phone) + " "), _c("br")]
+            _vm.currentModalData.email
+              ? _c("p", [
+                  _c("span", { staticClass: "uk-text-muted" }, [
+                    _vm._v("E-mail:")
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
+                    _vm._v(_vm._s(_vm.currentModalData.email))
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentModalData.instagram
+              ? _c("p", [
+                  _c("span", { staticClass: "uk-text-muted" }, [
+                    _vm._v("Instagram:")
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
+                    _vm._v(_vm._s(_vm.currentModalData.instagram))
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentModalData.workTime
+              ? _c("p", [
+                  _c("span", { staticClass: "uk-text-muted" }, [
+                    _vm._v("Время работы:")
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
+                    _vm._v(_vm._s(_vm.currentModalData.workTime))
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "p",
+              [
+                _c("span", { staticClass: "uk-text-muted" }, [
+                  _vm._v("Телефоны:")
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _vm._l(_vm.currentModalData.phones, function(phone) {
+                  return _c(
+                    "span",
+                    { staticClass: "uk-text-bold uk-text-emphasis" },
+                    [_vm._v(_vm._s(phone) + " "), _c("br")]
+                  )
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _vm.currentModalData.availableTours
+              ? _c(
+                  "p",
+                  [
+                    _c("span", { staticClass: "uk-text-muted" }, [
+                      _vm._v(
+                        "Можно приобрести экскурсии на следующие предприятия:"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _vm._l(_vm.currentModalData.availableTours, function(tour) {
+                      return _c(
+                        "span",
+                        { staticClass: "uk-text-bold uk-text-emphasis" },
+                        [_vm._v("— " + _vm._s(tour) + " "), _c("br")]
+                      )
+                    })
+                  ],
+                  2
                 )
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "p",
-            [
-              _c("span", { staticClass: "uk-text-muted" }, [
-                _vm._v("Можно приобрести экскурсии на следующие предприятия:")
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _vm._l(_vm.currentModalData.availableTours, function(tour) {
-                return _c(
-                  "span",
-                  { staticClass: "uk-text-bold uk-text-emphasis" },
-                  [_vm._v("— " + _vm._s(tour) + " "), _c("br")]
-                )
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _vm.currentModalData.images
-            ? _c("div", { attrs: { "uk-slideshow": "" } }, [_vm._m(0)])
-            : _vm._e()
-        ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.currentModalData.pic
+              ? _c("div", { attrs: { "uk-slideshow": "autoplay: true" } }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "uk-position-relative uk-visible-toggle uk-light",
+                      attrs: { tabindex: "-1" }
+                    },
+                    [
+                      _c(
+                        "ul",
+                        { staticClass: "uk-slideshow-items" },
+                        _vm._l(_vm.currentModalData.pic, function(image) {
+                          return _c("li", [
+                            _c("img", {
+                              attrs: {
+                                src: image,
+                                alt: "No alt",
+                                "uk-cover": ""
+                              }
+                            })
+                          ])
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _c("a", {
+                        staticClass:
+                          "uk-position-center-left uk-position-small uk-hidden-hover",
+                        attrs: {
+                          href: "#",
+                          "uk-slidenav-previous": "",
+                          "uk-slideshow-item": "previous"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("a", {
+                        staticClass:
+                          "uk-position-center-right uk-position-small uk-hidden-hover",
+                        attrs: {
+                          href: "#",
+                          "uk-slidenav-next": "",
+                          "uk-slideshow-item": "next"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("ul", {
+                    staticClass:
+                      "uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"
+                  })
+                ])
+              : _vm._e()
+          ],
+          1
+        )
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "uk-slideshow-items" }, [
-      _c("li", [
-        _c("img", {
-          attrs: {
-            src: "/factory-marker.c8dcc428.png",
-            alt: "",
-            "uk-cover": ""
-          }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -35955,7 +36200,7 @@ render._withStripped = true
       
       }
     })();
-},{"leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","../assets/tour-firms.json":"../src/assets/tour-firms.json","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
+},{"vue-nl2br":"../node_modules/vue-nl2br/dist/vue-nl2br.js","leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","../assets/tour-firms.json":"../src/assets/tour-firms.json","../assets/fabrics.json":"../src/assets/fabrics.json","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36070,7 +36315,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53912" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58084" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
