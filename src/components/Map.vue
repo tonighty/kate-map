@@ -27,12 +27,12 @@
                     <p v-if="currentModalData.site">
                         <span class="uk-text-muted">Сайт:</span>
                         <br>
-                        <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.site }}</span>
+                        <a :href="currentModalData.site" class="uk-link">{{ currentModalData.site }}</a>
                     </p>
                     <p v-if="currentModalData.email">
                         <span class="uk-text-muted">E-mail:</span>
                         <br>
-                        <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.email }}</span>
+                        <a :href="'mailto:' + currentModalData.email" class="uk-link">{{ currentModalData.email }}</a>
                     </p>
                     <p v-if="currentModalData.instagram">
                         <span class="uk-text-muted">Instagram:</span>
