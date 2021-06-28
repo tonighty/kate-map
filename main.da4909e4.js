@@ -36013,9 +36013,14 @@ exports.default = _default;
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
-                  _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
-                    _vm._v(_vm._s(_vm.currentModalData.site))
-                  ])
+                  _c(
+                    "a",
+                    {
+                      staticClass: "uk-link",
+                      attrs: { href: _vm.currentModalData.site }
+                    },
+                    [_vm._v(_vm._s(_vm.currentModalData.site))]
+                  )
                 ])
               : _vm._e(),
             _vm._v(" "),
@@ -36027,9 +36032,14 @@ exports.default = _default;
                   _vm._v(" "),
                   _c("br"),
                   _vm._v(" "),
-                  _c("span", { staticClass: "uk-text-bold uk-text-emphasis" }, [
-                    _vm._v(_vm._s(_vm.currentModalData.email))
-                  ])
+                  _c(
+                    "a",
+                    {
+                      staticClass: "uk-link",
+                      attrs: { href: "mailto:" + _vm.currentModalData.email }
+                    },
+                    [_vm._v(_vm._s(_vm.currentModalData.email))]
+                  )
                 ])
               : _vm._e(),
             _vm._v(" "),
@@ -36315,7 +36325,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58084" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58733" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
