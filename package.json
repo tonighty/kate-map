@@ -15,7 +15,8 @@
         "leaflet": "^1.7.1",
         "leaflet.animatedmarker": "^1.0.0",
         "uikit": "^3.6.22",
-        "vue": "^2.6.11"
+        "vue": "^2.6.11",
+        "vue-nl2br": "^0.1.2"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
@@ -25,6 +26,7 @@
         "eslint": "^6.7.2",
         "eslint-plugin-vue": "^6.2.2",
         "gh-pages": "^3.2.0",
+        "parcel-plugin-static-files-copy": "^2.6.0",
         "sass": "^1.32.8",
         "sass-loader": "^11.0.1",
         "vue-template-compiler": "^2.6.11"
@@ -42,6 +44,10 @@
             "parser": "babel-eslint"
         },
         "rules": {}
+    },
+    "staticFiles": {
+        "staticPath": "public",
+        "watcherGlob": "**"
     },
     "browserslist": [
         "> 1%",

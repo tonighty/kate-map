@@ -16,17 +16,30 @@
                 <div class="uk-modal-body">
                     <h2 class="uk-modal-title uk-text-bold uk-text-center">{{ currentModalData.name }}</h2>
 
+                    <nl2br tag="p" v-if="currentModalData.description" :text="currentModalData.description">
+                        {{ currentModalData.description }}
+                    </nl2br>
                     <p>
                         <span class="uk-text-muted">Адрес:</span>
                         <br>
                         <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.address }}</span>
                     </p>
-                    <p>
+                    <p v-if="currentModalData.site">
                         <span class="uk-text-muted">Сайт:</span>
                         <br>
                         <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.site }}</span>
                     </p>
-                    <p>
+                    <p v-if="currentModalData.email">
+                        <span class="uk-text-muted">E-mail:</span>
+                        <br>
+                        <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.email }}</span>
+                    </p>
+                    <p v-if="currentModalData.instagram">
+                        <span class="uk-text-muted">Instagram:</span>
+                        <br>
+                        <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.instagram }}</span>
+                    </p>
+                    <p v-if="currentModalData.workTime">
                         <span class="uk-text-muted">Время работы:</span>
                         <br>
                         <span class="uk-text-bold uk-text-emphasis">{{ currentModalData.workTime }}</span>
@@ -36,18 +49,24 @@
                         <br>
                         <span class="uk-text-bold uk-text-emphasis" v-for="phone in currentModalData.phones">{{ phone }} <br></span>
                     </p>
-                    <p>
+                    <p v-if="currentModalData.availableTours">
                         <span class="uk-text-muted">Можно приобрести экскурсии на следующие предприятия:</span>
                         <br>
                         <span class="uk-text-bold uk-text-emphasis" v-for="tour in currentModalData.availableTours">— {{ tour }} <br></span>
                     </p>
 
-                    <div uk-slideshow v-if="currentModalData.images">
-                        <ul class="uk-slideshow-items">
-                            <li>
-                                <img src="../assets/factory-marker.png" alt="" uk-cover>
-                            </li>
-                        </ul>
+                    <div uk-slideshow="autoplay: true" v-if="currentModalData.pic">
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                            <ul class="uk-slideshow-items">
+                                <li v-for="image in currentModalData.pic">
+                                    <img :src="image" alt="No alt" uk-cover>
+                                </li>
+                            </ul>
+
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                        </div>
+                        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
                     </div>
                 </div>
             </div>
@@ -56,6 +75,7 @@
 </template>
 
 <script>
+import Nl2br from "vue-nl2br";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import UIkit from "uikit";
@@ -66,35 +86,17 @@ import tourMarkerImage from "../assets/tour-marker.png";
 import markerShadowImage from "leaflet/dist/images/marker-shadow.png";
 import planeImage from "../assets/plane.png";
 import bigCloudImage from "../assets/cloud-big.png";
-import tourFirms from "../assets/tour-firms.json";
 
 /** @type {Array} */
-const tourAgencies = tourFirms;
-
-const factories = [
-    {
-        name: 'Эвернит',
-        address: 'ул. Русская, д. 94А, пом. здание Завода «Варяг», г. Владивосток',
-        description: 'описание',
-        email: 'everneat@everneat.ru',
-        instagram: 'www.instagram.com/ever_neat/',
-        site: 'https://everneat.ru',
-        workTime: 'пн-пт 09:00–18:00',
-        phones: [
-            '+7 (423) 202-52-53',
-            'WA +7 (902)-488-80-70',
-        ],
-        availableTours: [
-            'ООО «Фабрика мороженного»',
-            'Завод «Соллерс Мазда».',
-        ],
-        lat: 1159.5733503104373,
-        lon: 845,
-    },
-];
+import tourAgencies from "../assets/tour-firms.json";
+/** @type {Array} */
+import factories from "../assets/fabrics.json";
 
 export default {
     name: "Map",
+    components: {
+        Nl2br
+    },
     data() {
         return {
             center: [37, 7749, -122, 4194],
@@ -113,10 +115,6 @@ export default {
                 dragging: !L.Browser.mobile,
                 tap: !L.Browser.mobile,
             })
-
-            map.on('click', function(e) {
-                alert(`lat: ${Math.round(e.latlng.lat)}, lon: ${Math.round(e.latlng.lng)}`)
-            });
 
             const bounds = [[0, 0], [2663, 1900]]
 
