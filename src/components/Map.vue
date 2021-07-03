@@ -80,7 +80,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import UIkit from "uikit";
 import "leaflet.animatedmarker/src/AnimatedMarker";
-import mapImage from "../assets/map.png";
+import mapImage from "../assets/map_r.jpg";
 import factoryMarkerImage from "../assets/factory-marker.png";
 import tourMarkerImage from "../assets/tour-marker.png";
 import markerShadowImage from "leaflet/dist/images/marker-shadow.png";
