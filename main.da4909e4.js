@@ -35175,8 +35175,8 @@ L.animatedMarker = function (latlngs, options) {
   return new L.AnimatedMarker(latlngs, options);
 };
 
-},{}],"../src/assets/map.png":[function(require,module,exports) {
-module.exports = "/map.69d90127.png";
+},{}],"../src/assets/map_r.jpg":[function(require,module,exports) {
+module.exports = "/map_r.9a943f10.jpg";
 },{}],"../src/assets/factory-marker.png":[function(require,module,exports) {
 module.exports = "/factory-marker.c8dcc428.png";
 },{}],"../src/assets/tour-marker.png":[function(require,module,exports) {
@@ -35205,7 +35205,7 @@ module.exports = [{
   "workTime": "пн-пт 10:00–18:00",
   "phones": ["+7 (423) 245-96-96", "+7 (423) 230-03-45"],
   "availableTours": ["Завод «Coca-Cola»"],
-  "lat": 1062,
+  "lat": 1072,
   "lon": 624,
   "pic": ["photo_2021-06-30_19-26-35.jpg"]
 }, {
@@ -35216,7 +35216,7 @@ module.exports = [{
   "phones": ["+7 (423) 242-20-17", "+7 (423) 257-68-63", "+7 (908) 448-86-81", "+7 (423) 242-14-39"],
   "availableTours": ["Завод «Coca-Cola»", "ООО «Фабрика мороженного»", "Торгово-производственная компания «Владхлеб»", "Торгово-производственная компания «Эвернит»", "Биотик-Люкс"],
   "lat": 1122,
-  "lon": 705,
+  "lon": 700,
   "pic": ["photo_2021-06-30_19-23-20.jpg"]
 }, {
   "name": "Оникс Тур",
@@ -35226,7 +35226,7 @@ module.exports = [{
   "phones": ["+7 (908) 440-00-01", "+7 (914) 963-46-75", "+7 (423) 250-00-01", "+7 (423) 274-54-44", "+7 (423) 255-90-40", "+7 (432) 250-00-01"],
   "availableTours": ["ООО «Фабрика мороженного»", "Биотик-Люкс"],
   "lat": 986,
-  "lon": 548,
+  "lon": 538,
   "pic": ["photo_2021-07-03_13-25-30.jpg"]
 }, {
   "name": "«Приморавтотранс»",
@@ -35236,7 +35236,7 @@ module.exports = [{
   "phones": ["+7 (423) 245-03-45"],
   "availableTours": ["Завод «Coca-Cola»"],
   "lat": 1089,
-  "lon": 599,
+  "lon": 575,
   "pic": ["photo_2021-07-03_13-26-21.jpg"]
 }, {
   "name": "«Спутник»",
@@ -35307,7 +35307,7 @@ module.exports = [{
   "site": "https://vladhleb.ru",
   "description": "Традиции хлебопечения компания «Владхлеб» хранит с 1903 года. Уже более ста лет продукция «Владхлеба» является неизменным спутником будней и праздников жителей Владивостока. Музей «Владхлеб» бережно хранит историю предприятия в архивных записях и старых фотографиях. Здесь можно узнать, и как готовили хлеб в тяжелое военное время, и когда во Владивостоке появился первый настоящий круассан, как родился «Подольский» и какие очереди выстраивались в первые городские кондитерские. 15 457 человек посетили музей за 12 лет!\nВ 2017 году в музее была проведена масштабная реконструкция. Сегодня эта интерактивная площадка, показывающая связь хлебопекарного предприятия и Владивостока, работает не только для сотрудников предприятия, но и для горожан. Музей «Владхлеб» обязательно принимает иностранные и другие делегации, посещающие предприятие. Здесь проводят экскурсии и мастер-классы для детей и взрослых.\nДля регистрации на экскурсию достаточно:\n1 Минимум за 1 день до планируемой даты посещения выставки отправить на museum@vladhleb.ru заявку, указав в теме письма дату и время планируемой экскурсии, а также номер телефона для подтверждения заявки, или позвонить по телефону: 220-68-23.\n2 В теме письма обязательна пометка «ЭКСКУРСИЯ».\n3 Дождаться телефонного подтверждения вашей заявки от сотрудника музея.\n4 Для регистрации на мастер-класс необходимо подать заявку за 3 дня.\nПравила посещения:\n1 Оптимальное количество человек в группе для экскурсии: от 3 и более посетителей.\n2 Экскурсии с дегустацией-чаепитием 10-30 посетителей с сопровождающим для школьников.\n3 Примерная продолжительность экскурсии: 40-50 минут, мастер-класса: 30 минут.\n4 Дни и время работы музея: с понедельника по пятницу с 10:00-17:00 , суббота и воскресенье – выходной.\n5 Проведение экскурсии с чаепитием-дегустацией, мастер-классом возможно только по предварительной заявке.",
   "price": "1 Экскурсия + дегустация + мастер-класс по росписи пряников – 400 руб/чел.\n2 Экскурсия + дегустация-чаепитие – 300 руб/чел.\n3 Экскурсия – 150 руб/чел.\n4 Экскурсия для организованных экскурсионных групп иностранных туристов – 200 руб/чел.",
-  "lat": 1042,
+  "lat": 1142,
   "lon": 836,
   "pic": ["photo_2021-06-28_21-55-11.jpg", "photo_2021-06-28_21-55-21.jpg"]
 }, {
@@ -35676,7 +35676,7 @@ var _uikit = _interopRequireDefault(require("uikit"));
 
 require("leaflet.animatedmarker/src/AnimatedMarker");
 
-var _map = _interopRequireDefault(require("../assets/map.png"));
+var _map_r = _interopRequireDefault(require("../assets/map_r.jpg"));
 
 var _factoryMarker = _interopRequireDefault(require("../assets/factory-marker.png"));
 
@@ -35802,7 +35802,7 @@ var _default = {
 
       var bounds = [[0, 0], [2663, 1900]];
 
-      _leaflet2.default.imageOverlay(_map.default, bounds).addTo(map);
+      _leaflet2.default.imageOverlay(_map_r.default, bounds).addTo(map);
 
       map.fitBounds(bounds);
       map.setMaxBounds(bounds);
@@ -36213,7 +36213,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-nl2br":"../node_modules/vue-nl2br/dist/vue-nl2br.js","leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map.png":"../src/assets/map.png","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","../assets/tour-firms.json":"../src/assets/tour-firms.json","../assets/fabrics.json":"../src/assets/fabrics.json","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
+},{"vue-nl2br":"../node_modules/vue-nl2br/dist/vue-nl2br.js","leaflet/dist/leaflet.css":"../node_modules/leaflet/dist/leaflet.css","leaflet":"../node_modules/leaflet/dist/leaflet-src.js","uikit":"../node_modules/uikit/dist/js/uikit.js","leaflet.animatedmarker/src/AnimatedMarker":"../node_modules/leaflet.animatedmarker/src/AnimatedMarker.js","../assets/map_r.jpg":"../src/assets/map_r.jpg","../assets/factory-marker.png":"../src/assets/factory-marker.png","../assets/tour-marker.png":"../src/assets/tour-marker.png","leaflet/dist/images/marker-shadow.png":"../node_modules/leaflet/dist/images/marker-shadow.png","../assets/plane.png":"../src/assets/plane.png","../assets/cloud-big.png":"../src/assets/cloud-big.png","../assets/tour-firms.json":"../src/assets/tour-firms.json","../assets/fabrics.json":"../src/assets/fabrics.json","./../assets/tour-marker.png":[["tour-marker.2d72ad2d.png","../src/assets/tour-marker.png"],"../src/assets/tour-marker.png"],"./../assets/factory-marker.png":[["factory-marker.c8dcc428.png","../src/assets/factory-marker.png"],"../src/assets/factory-marker.png"],"_css_loader":"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"../src/App.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36328,7 +36328,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50907" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53953" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
