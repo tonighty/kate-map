@@ -58,8 +58,8 @@
                     <div uk-slideshow="autoplay: true" v-if="currentModalData.pic">
                         <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
                             <ul class="uk-slideshow-items">
-                                <li v-for="image in currentModalData.pic">
-                                    <img :src="image" alt="No alt" uk-cover>
+                                <li v-for="image in currentModalData.pic" class="slide">
+                                    <img :src="image" alt="No alt" class="slide__image">
                                 </li>
                             </ul>
 
@@ -251,5 +251,12 @@ export default {
 }
 .marker-toggle_disabled {
     filter: grayscale(1);
+}
+.slide {
+    text-align: center;
+}
+.slide__image {
+    object-fit: contain;
+    height: 100%;
 }
 </style>
