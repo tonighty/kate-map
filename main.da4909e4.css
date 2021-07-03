@@ -661,6 +661,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .marker-toggle_disabled[data-v-1423d3] {
     filter: grayscale(1);
 }
+.slide[data-v-1423d3] {
+    text-align: center;
+}
+.slide__image[data-v-1423d3] {
+    object-fit: contain;
+    height: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

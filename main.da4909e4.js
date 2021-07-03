@@ -35196,7 +35196,8 @@ module.exports = [{
   "phones": ["+7 (423) 257-55-63", "+7 (423) 225-24-76"],
   "availableTours": ["ООО «Фабрика мороженного»", "Завод «Соллерс Мазда»."],
   "lat": 678,
-  "lon": 969
+  "lon": 969,
+  "pic": ["photo_2021-07-03_13-26-09.jpg"]
 }, {
   "name": "Фрегат Аэро",
   "address": "Океанский просп., 69, Владивосток (оф. 21).",
@@ -35205,7 +35206,8 @@ module.exports = [{
   "phones": ["+7 (423) 245-96-96", "+7 (423) 230-03-45"],
   "availableTours": ["Завод «Coca-Cola»"],
   "lat": 1062,
-  "lon": 624
+  "lon": 624,
+  "pic": ["photo_2021-06-30_19-26-35.jpg"]
 }, {
   "name": "Фори Тур Приморье",
   "address": "Океанский просп., 123Б, Владивосток.",
@@ -35214,7 +35216,8 @@ module.exports = [{
   "phones": ["+7 (423) 242-20-17", "+7 (423) 257-68-63", "+7 (908) 448-86-81", "+7 (423) 242-14-39"],
   "availableTours": ["Завод «Coca-Cola»", "ООО «Фабрика мороженного»", "Торгово-производственная компания «Владхлеб»", "Торгово-производственная компания «Эвернит»", "Биотик-Люкс"],
   "lat": 1122,
-  "lon": 705
+  "lon": 705,
+  "pic": ["photo_2021-06-30_19-23-20.jpg"]
 }, {
   "name": "Оникс Тур",
   "address": "Алеутская ул., 51, Владивосток (офис 12).",
@@ -35223,7 +35226,8 @@ module.exports = [{
   "phones": ["+7 (908) 440-00-01", "+7 (914) 963-46-75", "+7 (423) 250-00-01", "+7 (423) 274-54-44", "+7 (423) 255-90-40", "+7 (432) 250-00-01"],
   "availableTours": ["ООО «Фабрика мороженного»", "Биотик-Люкс"],
   "lat": 986,
-  "lon": 548
+  "lon": 548,
+  "pic": ["photo_2021-07-03_13-25-30.jpg"]
 }, {
   "name": "«Приморавтотранс»",
   "address": "Комсомольская ул., 7А, Владивосток (офис 4).",
@@ -35232,7 +35236,8 @@ module.exports = [{
   "phones": ["+7 (423) 245-03-45"],
   "availableTours": ["Завод «Coca-Cola»"],
   "lat": 1089,
-  "lon": 599
+  "lon": 599,
+  "pic": ["photo_2021-07-03_13-26-21.jpg"]
 }, {
   "name": "«Спутник»",
   "address": "Партизанский просп., 2А, Владивосток (офис 101, этаж 1)",
@@ -35241,7 +35246,8 @@ module.exports = [{
   "phones": ["+7 (423) 245-03-45."],
   "availableTours": ["ООО «Фабрика мороженного»", "Торгово-производственная компания «Эвернит»", "Завод «Соллерс Мазда»"],
   "lat": 993,
-  "lon": 616
+  "lon": 616,
+  "pic": ["photo_2021-07-03_13-25-17.jpg"]
 }];
 },{}],"../src/assets/fabrics.json":[function(require,module,exports) {
 module.exports = [{
@@ -36129,13 +36135,10 @@ exports.default = _default;
                         "ul",
                         { staticClass: "uk-slideshow-items" },
                         _vm._l(_vm.currentModalData.pic, function(image) {
-                          return _c("li", [
+                          return _c("li", { staticClass: "slide" }, [
                             _c("img", {
-                              attrs: {
-                                src: image,
-                                alt: "No alt",
-                                "uk-cover": ""
-                              }
+                              staticClass: "slide__image",
+                              attrs: { src: image, alt: "No alt" }
                             })
                           ])
                         }),
@@ -36325,7 +36328,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58733" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50907" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
